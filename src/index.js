@@ -1,4 +1,5 @@
 const config = require('config');
+const mongoose = require('mongoose');
 
 process.env.TZ = 'Asia/Kolkata';
 
@@ -8,9 +9,12 @@ require('./util/axios');
 async function bootstrap() {
 
     const app = require('./app');
-    app.listen(config.APP.PORT, () =>
-        logger.info(`server running on port ${config.APP.PORT}`)
-    );
+    mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
+        logger.info('Connected to MongoDB');
+        app.listen(config.APP.PORT, '0.0.0.0', () => {
+            logger.info(`Listening to port ${config.APP.PORT}`);
+        });
+    });
 }
 
 bootstrap();

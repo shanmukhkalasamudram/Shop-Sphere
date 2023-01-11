@@ -1,6 +1,6 @@
 
 const get = async () => {
-    let data = "test";
+    let data = "testtt";
     return {
         data,
     };
