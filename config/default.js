@@ -9,5 +9,8 @@ const config = {
         MORGAN_LOG_LEVEL: process.env.MORGAN_LOG_LEVEL || 'combined',
         SILENT_LOGGER: process.env.SILENT_LOGGER || false,
     },
+    mongoose: {
+        url: process.env.MONGOOSE_URL
+    }
 };
 module.exports = config;
