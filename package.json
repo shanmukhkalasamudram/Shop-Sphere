@@ -1,7 +1,7 @@
 {
-    "name": "Node Boiler plate",
+    "name": "Shop Sphere",
     "version": "1.0.0",
-    "description": "Boilerplate for any nodejs applications",
+    "description": "",
     "main": "index.js",
     "private": true,
     "engines": {
