@@ -19,7 +19,7 @@
         "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test"
     },
     "keywords": [],
-    "author": "Shanmukhasai",
+    "author": "Shanmukha sai KV",
     "license": "ISC",
     "dependencies": {
         "@hapi/boom": "9.1.2",
