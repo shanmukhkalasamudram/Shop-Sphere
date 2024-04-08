@@ -1,9 +1,11 @@
+const { models } = require('../../../mongo-models');
 
 const get = async () => {
-    let data = "testtt";
-    return {
-        data,
-    };
+  const { itemSchema } = models;
+  const data = await itemSchema.create({});
+  return {
+    data,
+  };
 };
 
 module.exports = { get };
