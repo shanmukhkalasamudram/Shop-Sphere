@@ -1,5 +1,3 @@
-const { get, isNil, isArray, findIndex } = require('lodash');
-const boom = require('@hapi/boom');
 const errorDecorator = require('../util/error-decorator/error-decorator.util');
 
 function authenticationMiddleware({}) {
