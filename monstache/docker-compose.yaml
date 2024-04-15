@@ -1,0 +1,17 @@
+version: "3"
+services:
+  monstache:
+    image: rwynn/monstache:6.7.2
+    container_name: project
+    working_dir: /monstache
+    command: -f config.toml
+    volumes:
+      - ./config.toml:/monstache/config.toml  
+    ports:
+      - "8083:8083"
+    healthcheck:
+      test: "wget -q -O - http://host.docker.internal:8083/health"
+      interval: 10s
+      timeout: 30s
+      retries: 300
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+# Global settings:
+mongo-url = "Mongo Database connection string"
+
+elasticsearch-urls = ["Elastic Database connection string"]
+
+direct-read-namespaces = ["test.items"]  #Database - Collection-name
+change-stream-namespaces = ["test.items"]  #Database - Collection-name
+
+verbose = true
+replay = false
+resume = true
+
+enable-http-server = true
+http-server-addr = ":8083"
+
+# Namespace mappings:
+[[mapping]]
+  namespace = "test.items"
+  index = "items"
