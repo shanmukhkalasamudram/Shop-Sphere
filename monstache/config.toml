@@ -1,7 +1,7 @@
 # Global settings:
 mongo-url = "Mongo Database connection string"
 
-elasticsearch-urls = ["Elastic Database connection string"]
+elasticsearch-urls = ["Mongo Database connection string"]
 
 direct-read-namespaces = ["test.items"]  #Database - Collection-name
 change-stream-namespaces = ["test.items"]  #Database - Collection-name
