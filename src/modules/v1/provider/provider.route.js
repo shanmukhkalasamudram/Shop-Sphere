@@ -8,7 +8,7 @@ router.post(
   '/items',
   authMiddleware({}),
   validationMiddleware(schema.postItem),
-  controller.get
+  controller.postItem
 );
 
 module.exports = router;

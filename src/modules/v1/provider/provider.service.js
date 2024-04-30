@@ -8,4 +8,12 @@ const get = async () => {
   };
 };
 
-module.exports = { get };
+const postItem = async (data) => {
+  const { itemSchema } = models;
+  const result = await itemSchema.create(data);
+  return {
+    result,
+  };
+};
+
+module.exports = { get, postItem };

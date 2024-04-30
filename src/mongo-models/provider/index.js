@@ -21,6 +21,14 @@ const itemSchema = mongoose.Schema({
     type: Object,
     default: {},
   },
+  item_name: {
+    type: String,
+    default: '',
+  },
+  image: {
+    type: String,
+    default: '',
+  },
 });
 
 itemSchema.plugin(schemaOptionsPlugin);
