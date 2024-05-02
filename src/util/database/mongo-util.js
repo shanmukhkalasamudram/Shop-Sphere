@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const logger = require('../logger/logger.util');
-const { setUpModels } = require('../../mongo-models');
+// const { setUpModels } = require('../../mongo-models');
 
 let mongoConnection;
 
@@ -16,7 +16,7 @@ const options = {
 const connectDB = async () => {
   if (config.MONGO) {
     await mongoose.connect(config.MONGO.url, options);
-    await setUpModels();
+    // await setUpModels();
     logger.info('Database Connected and Models Loaded');
   } else {
     logger.error('Error');
