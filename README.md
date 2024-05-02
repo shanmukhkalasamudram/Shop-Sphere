@@ -12,8 +12,10 @@ Here in this project I have Mongo Database and to implement efficient search fun
 Elastic Search is very effective for any kind of search operations. 
 To sync databases, I have used Monstache to keep mongo and elastic search in synchronized. 
 To implement with ease, running the monstache service over the docker. Refer to Monstache Folder for config and docker-compose file
+Pre-requisite - Docker Hub, Docker running on PC, Cluster 
+docker start project
+docker-compose up -d
 
 
 ## Databases or Platforms 
 Mongo Db 
-

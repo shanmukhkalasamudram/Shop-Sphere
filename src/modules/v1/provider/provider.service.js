@@ -1,11 +1,10 @@
-const { models } = require('../../../mongo-models');
+const { Item } = require('../../../mongo-models');
 
-const get = async () => {
-  const { itemSchema } = models;
-  const data = await itemSchema.create({});
+const postItem = async (data) => {
+  const result = await Item.create(data);
   return {
-    data,
+    result,
   };
 };
 
-module.exports = { get };
+module.exports = { postItem };

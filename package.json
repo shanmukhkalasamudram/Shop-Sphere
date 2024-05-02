@@ -22,6 +22,7 @@
     "author": "Shanmukha sai KV",
     "license": "ISC",
     "dependencies": {
+        "@elastic/elasticsearch": "^8.13.1",
         "@hapi/boom": "9.1.2",
         "@hapi/joi-date": "2.0.1",
         "axios": "0.21.0",

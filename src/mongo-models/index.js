@@ -1,14 +1,15 @@
-const mongoose = require('mongoose');
-const itemSchema = require('./provider');
+// const itemSchema = require('./provider');
 
-const models = {};
+// const models = {};
 
-const setUpModels = async () => {
-  models.itemSchema = mongoose.model('item', itemSchema);
-  return models;
-};
+// const setUpModels = async () => {
+//   models.itemSchema = mongoose.model('item', itemSchema);
+//   return models;
+// };
 
-module.exports = {
-  setUpModels,
-  models,
-};
+// module.exports = {
+//   setUpModels,
+//   models,
+// };
+
+module.exports.Item = require('./provider');

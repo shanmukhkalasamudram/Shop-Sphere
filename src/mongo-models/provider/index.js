@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const schemaOptionsPlugin = require('../plugins/schema-options.plugin');
 
-const itemSchema = mongoose.Schema({
+const schema = mongoose.Schema({
   provider_id: {
     type: mongoose.Schema.Types.ObjectId,
   },
@@ -21,7 +21,21 @@ const itemSchema = mongoose.Schema({
     type: Object,
     default: {},
   },
+  item_name: {
+    type: String,
+    default: '',
+  },
+  image: {
+    type: String,
+    default: '',
+  },
 });
 
-itemSchema.plugin(schemaOptionsPlugin);
-module.exports = itemSchema;
+schema.pre('save', async () => {});
+
+schema.post('save', async (doc) => {});
+
+schema.plugin(schemaOptionsPlugin);
+
+const model = mongoose.model('items', schema);
+module.exports = model;

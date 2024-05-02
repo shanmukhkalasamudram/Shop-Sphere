@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const logger = require('../logger/logger.util');
-const { setUpModels } = require('../../mongo-models');
+// const { setUpModels } = require('../../mongo-models');
 
 let mongoConnection;
 
@@ -16,28 +16,7 @@ const options = {
 const connectDB = async () => {
   if (config.MONGO) {
     await mongoose.connect(config.MONGO.url, options);
-    await setUpModels();
-    // const db = mongoose.connection;
-    // const data = (await db.collection('items')).watch(
-    //   [
-    //     {
-    //       $match: {
-    //         operationType: {
-    //           $in: ['insert', 'update', 'replace'],
-    //         },
-    //       },
-    //     },
-    //     {
-    //       $project: {
-    //         documentKey: false,
-    //       },
-    //     },
-    //   ],
-    //   { fullDocument: 'updateLookup' }
-    // );
-    // data.on('change', async (change) => {
-    // Push change to Kafka
-    // });
+    // await setUpModels();
     logger.info('Database Connected and Models Loaded');
   } else {
     logger.error('Error');

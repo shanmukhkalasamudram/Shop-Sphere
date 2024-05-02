@@ -13,5 +13,8 @@ const config = {
     url: process.env.MONGO_URL,
     MONGO_CONNECT_TIMEOUT: 10000,
   },
+  ELASTIC_SEARCH: {
+    node: process.env.ELASTIC_SEARCH_URL,
+  },
 };
 module.exports = config;

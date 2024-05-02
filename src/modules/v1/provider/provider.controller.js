@@ -6,6 +6,12 @@ const get = errorDecorator(async (req, _res, next) => {
   next(data);
 });
 
+const postItem = errorDecorator(async (req, _res, next) => {
+  const data = await service.postItem(req.body);
+  next(data);
+});
+
 module.exports = {
   get,
+  postItem,
 };
