@@ -11,4 +11,11 @@ router.post(
   controller.postItem
 );
 
+router.post(
+  '/on-boarding',
+  authMiddleware({}),
+  validationMiddleware(schema.postItem),
+  controller.postItem
+);
+
 module.exports = router;

@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+const { v4 } = require('uuid');
+const constants = require('../../util/constants');
 const schemaOptionsPlugin = require('../plugins/schema-options.plugin');
+const { produceMessage } = require('../../util/kafka/producer');
 
 const schema = mongoose.Schema({
   provider_id: {
@@ -33,7 +36,13 @@ const schema = mongoose.Schema({
 
 schema.pre('save', async () => {});
 
-schema.post('save', async (doc) => {});
+schema.post('save', async (doc) => {
+  await produceMessage({
+    topic: constants.KAFKA_TOPICS.PUSH_TO_ELASTIC,
+    key: v4(),
+    value: doc,
+  });
+});
 
 schema.plugin(schemaOptionsPlugin);
 
