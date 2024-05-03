@@ -16,5 +16,19 @@ const config = {
   ELASTIC_SEARCH: {
     node: process.env.ELASTIC_SEARCH_URL,
   },
+  KAFKA: {
+    CLIENT_ID: process.env.KAFKA_CLIENT_ID,
+    BROKERS: process.env.KAFKA_BROKERS.split(','),
+    SASL: {
+      MECHANISM: process.env.KAFKA_SASL_MECHANISM,
+      USERNAME: process.env.KAFKA_USERNAME,
+      PASSWORD: process.env.KAFKA_PASSWORD,
+    },
+    CONSUMER: {
+      GROUP: process.env.KAFKA_CONSUMER_GROUP,
+    },
+    PARTITION_COUNT: Number(process.env.KAFKA_TOPIC_PARTITION_COUNT),
+    REPLICA_COUNT: Number(process.env.KAFKA_TOPIC_REPLICA_COUNT),
+  },
 };
 module.exports = config;
