@@ -17,5 +17,8 @@ docker start project
 docker-compose up -d
 
 
+## Kafka Integration to sync 
+In this project, I have also integrated kafka to sync documents between Mongo and Elastic Search without monstache. Also this Kafka will be used more intensively in further areas. 
+
 ## Databases or Platforms 
 Mongo Db 
