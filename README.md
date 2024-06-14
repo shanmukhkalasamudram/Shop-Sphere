@@ -22,3 +22,9 @@ In this project, I have also integrated kafka to sync documents between Mongo an
 
 ## Databases or Platforms 
 Mongo Db 
+Adding Redis, Mysql 
+
+Redis Wrapper
+Mysql Functions, 
+
+Sequalize Package
