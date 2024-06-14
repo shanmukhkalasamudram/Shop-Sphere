@@ -16,6 +16,15 @@ const config = {
   ELASTIC_SEARCH: {
     node: process.env.ELASTIC_SEARCH_URL,
   },
+  DB: {
+    SQL: {
+      NAME: process.env.DATABASE_NAME,
+      USERNAME: process.env.DATABASE_USERNAME,
+      PASSWORD: process.env.DATABASE_PASSWORD,
+      HOST: process.env.DATABASE_HOST,
+      PORT: process.env.DATABASE_PORT,
+    },
+  },
   KAFKA: {
     CLIENT_ID: process.env.KAFKA_CLIENT_ID,
     BROKERS: process.env.KAFKA_BROKERS.split(','),
