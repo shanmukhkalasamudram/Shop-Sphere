@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const httpStatusCodes = require('http-status-codes');
 const contextService = require('request-context');
 const { setupKafka } = require('./util/kafka/admin');
+const sqlSanitizer = require('./middlewares/sql_sanitizer.middleware');
 
 setupKafka();
 
@@ -33,6 +34,12 @@ app.use(
   bp.urlencoded({
     extended: false,
   })
+);
+
+app.use(sqlSanitizer);
+
+app.get('/health-check', async (_req, res) =>
+  res.status(200).json({ is_success: true })
 );
 
 app.use('/api', setupRoutes());

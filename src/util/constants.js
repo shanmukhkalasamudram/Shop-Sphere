@@ -4,6 +4,7 @@ module.exports = {
     SUCCESS_MESSAGE: 'Updated successfully',
   },
   KAFKA_TOPICS: {
-    PUSH_TO_ELASTIC: 'push_to_elastic',
+    PUSH_TO_ELASTIC: 'push_to_elastic_database',
   },
+  EXCLUDE: [],
 };

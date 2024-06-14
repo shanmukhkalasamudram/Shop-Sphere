@@ -19,7 +19,7 @@ const handleError = async (err) => {
   logger.error(err);
 };
 
-let TOPICS = ['push_to_elastic'];
+let TOPICS = ['push_to_elastic_database'];
 
 const subscribeKafka = async () => {
   const consumer = await createConsumer();

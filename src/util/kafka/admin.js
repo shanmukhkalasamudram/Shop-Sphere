@@ -28,7 +28,7 @@ const createTopics = async (admin, topic_list = []) => {
 };
 
 const topics = {
-  push_to_elastic: 'push_to_elastic',
+  push_to_elastic: 'push_to_elastic_database',
 };
 const filterTopics = (topic_list = []) => {
   const values = Object.values(topics);
