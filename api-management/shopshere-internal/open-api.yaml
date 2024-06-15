@@ -1,0 +1,232 @@
+openapi: 3.0.1
+info:
+  title: Project Name
+  description: ''
+  version: '1.0'
+servers:
+  - url: localhost:9200
+    description: Gateway
+paths:
+  /api/v1/provider/items:
+    post:
+      tags:
+        - provider
+      summary: /api/v1/provider/items POST
+      operationId: post-api-v1-provider-items
+      parameters:
+        - name: X-Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_name:
+                  type: string
+                provider_id:
+                  type: string
+                price:
+                  type: number
+                  format: float
+                list:
+                  type: boolean
+                quantity:
+                  type: number
+                  format: float
+                tags:
+                  type: object
+                  properties: {}
+                  additionalProperties: false
+              required:
+                - item_name
+                - provider_id
+                - price
+                - list
+                - quantity
+              additionalProperties: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: ''
+                properties:
+                  is_success:
+                    type: boolean
+                    default: true
+                  data:
+                    type: object
+          description: ''
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /api/v1/provider/on-boarding:
+    post:
+      tags:
+        - provider
+      summary: /api/v1/provider/on-boarding POST
+      operationId: post-api-v1-provider-on-boarding
+      parameters:
+        - name: X-Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_name:
+                  type: string
+                provider_id:
+                  type: string
+                price:
+                  type: number
+                  format: float
+                list:
+                  type: boolean
+                quantity:
+                  type: number
+                  format: float
+                tags:
+                  type: object
+                  properties: {}
+                  additionalProperties: false
+              required:
+                - item_name
+                - provider_id
+                - price
+                - list
+                - quantity
+              additionalProperties: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: ''
+                properties:
+                  is_success:
+                    type: boolean
+                    default: true
+                  data:
+                    type: object
+          description: ''
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /api/v1/test/:
+    get:
+      tags:
+        - test
+      summary: /api/v1/test/ GET
+      operationId: get-api-v1-test
+      parameters:
+        - name: X-Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: ''
+                properties:
+                  is_success:
+                    type: boolean
+                    default: true
+                  data:
+                    type: object
+          description: ''
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /api/v1/user/:
+    get:
+      tags:
+        - user
+      summary: /api/v1/user/ GET
+      operationId: get-api-v1-user
+      parameters:
+        - name: X-Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: ''
+                properties:
+                  is_success:
+                    type: boolean
+                    default: true
+                  data:
+                    type: object
+          description: ''
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  responses:
+    Success:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Success'
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthenticated:
+      description: Unauthenticated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Success:
+      properties:
+        is_success:
+          type: boolean
+          default: true
+        data:
+          type: object
+    Error:
+      properties:
+        is_success:
+          type: boolean
+          default: false
+        message:
+          type: string
