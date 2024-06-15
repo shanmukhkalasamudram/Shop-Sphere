@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: Project Name
+  description: ''
+  version: '1.0'
+servers:
+  - url: localhost:9200
+    description: Gateway
+paths: {}
+components:
+  responses:
+    Success:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Success'
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthenticated:
+      description: Unauthenticated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Success:
+      properties:
+        is_success:
+          type: boolean
+          default: true
+        data:
+          type: object
+    Error:
+      properties:
+        is_success:
+          type: boolean
+          default: false
+        message:
+          type: string

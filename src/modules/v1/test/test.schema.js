@@ -1,7 +1,7 @@
 const joi = require('joi');
 
-
-const get = joi.object({
+const get = joi
+  .object({
     // params: joi.object().keys({
     //     test: joi.string().required(),
     // }),
@@ -18,8 +18,9 @@ const get = joi.object({
     //     array: joi.array().items(joi.string().min(1)),
     //     flag: joi.boolean().required().valid(0, 1),
     // }),
-});
+  })
+  .description('internal');
 
 module.exports = {
-    get,
+  get,
 };

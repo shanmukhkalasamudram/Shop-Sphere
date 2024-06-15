@@ -16,7 +16,8 @@
         "start:local": "env-cmd -f .env nodemon --inspect src/index.js",
         "test": "env-cmd -f .env.test mocha test/ --timeout 30000000 --recursive --exit",
         "prepare": "husky install",
-        "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test"
+        "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test",
+        "generate-docs": "env-cmd -f .env node ./src/modules/docs.js"
     },
     "keywords": [],
     "author": "Shanmukha sai KV",
@@ -37,6 +38,8 @@
         "http-status-codes": "2.1.4",
         "joi": "17.4.0",
         "joi-objectid": "3.0.1",
+        "joi-to-swagger": "^6.2.0",
+        "js-yaml": "^4.1.0",
         "kafkajs": "^2.2.4",
         "lodash": "4.17.20",
         "mongoose": "^6.8.3",
