@@ -23,6 +23,7 @@
     "author": "Shanmukha sai KV",
     "license": "ISC",
     "dependencies": {
+        "@azure/service-bus": "^7.9.5",
         "@elastic/elasticsearch": "^8.13.1",
         "@hapi/boom": "9.1.2",
         "@hapi/joi-date": "2.0.1",

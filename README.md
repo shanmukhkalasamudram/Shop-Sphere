@@ -62,3 +62,24 @@ Write a script to parse Joi schemas and generate example request bodies.
 This script can generate different sample data types based on the Joi schema definitions (e.g., strings, numbers, dates).
 Integrating with Swagger:
 Use the script to automatically include these sample request bodies in the Swagger documentation.
+
+
+## What is ASB?
+Service Bus is a robust, managed messaging broker designed for enterprise-level communication between applications. It enables reliable and secure asynchronous data exchange by allowing the transmission of raw data in various formats such as JSON, XML, or plain text. Applications connected to Service Bus can process these messages effectively.
+
+There are a few components that make up Service Bus:
+
+Namespace
+Queues
+Topics
+
+Namespace
+A namespace serves as a comprehensive container for all messaging elements. Within a single namespace, it's possible to house multiple queues and topics, effectively functioning as application containers. In scenarios where an application comprises various components, these components can be linked to the topics and queues housed within the namespace.
+
+
+Queues
+Queues act as repositories for messages, serving as the point where messages are dispatched and received. Messages sent to a queue remain stored until they are fetched and processed by the receiving application. The mechanism operates on a First-In, First-Out (FIFO) basis.
+
+Upon receiving a new message in the queue, Service Bus assigns a timestamp to it. Once processed, the message is securely stored in redundant storage.
+
+Messages within the queue are delivered in a pull mode, implying that they are only delivered when specifically requested by an application.
