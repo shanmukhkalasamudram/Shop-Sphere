@@ -39,5 +39,9 @@ const config = {
     PARTITION_COUNT: Number(process.env.KAFKA_TOPIC_PARTITION_COUNT),
     REPLICA_COUNT: Number(process.env.KAFKA_TOPIC_REPLICA_COUNT),
   },
+  AZURE: {
+    CONNECTION_STRING: process.env.AZURE_CONNECTION_STRING,
+    QUEUE_NAME: process.env.AZURE_QUEUE_NAME,
+  },
 };
 module.exports = config;
