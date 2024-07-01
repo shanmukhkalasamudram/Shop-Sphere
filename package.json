@@ -14,7 +14,7 @@
         "start:uat": "node --inspect src/index.js",
         "start:dev": "env-cmd -f .env.dev node --inspect src/index.js",
         "start:local": "env-cmd -f .env nodemon --inspect src/index.js",
-        "test": "env-cmd -f .env.test mocha test/ --timeout 30000000 --recursive --exit",
+        "test": "env-cmd -f .env.test mocha test/index.js --timeout 30000000 --recursive --exit",
         "prepare": "husky install",
         "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test",
         "generate-docs": "env-cmd -f .env node ./src/modules/docs.js"
@@ -43,6 +43,7 @@
         "js-yaml": "^4.1.0",
         "kafkajs": "^2.2.4",
         "lodash": "4.17.20",
+        "mongodb-memory-server": "9.4.0",
         "mongoose": "^6.8.3",
         "morgan": "1.10.0",
         "mysql2": "2.3.3",
