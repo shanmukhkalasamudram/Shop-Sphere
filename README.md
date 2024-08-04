@@ -82,4 +82,4 @@ Queues act as repositories for messages, serving as the point where messages are
 
 Upon receiving a new message in the queue, Service Bus assigns a timestamp to it. Once processed, the message is securely stored in redundant storage.
 
-Messages within the queue are delivered in a pull mode, implying that they are only delivered when specifically requested by an application.
+Messages within the queue are delivered in a pull mode, implying that they are only delivered when specifically requested by an application
