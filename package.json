@@ -1,85 +1,90 @@
 {
-    "name": "Shop Sphere",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "private": true,
-    "engines": {
-        "node": ">=8.3.2"
-    },
-    "scripts": {
-        "postinstall": "husky install",
-        "lint:fix": "eslint . --fix",
-        "start": "node --inspect src/index.js",
-        "start:uat": "node --inspect src/index.js",
-        "start:dev": "env-cmd -f .env.dev node --inspect src/index.js",
-        "start:local": "env-cmd -f .env nodemon --inspect src/index.js",
-        "test": "env-cmd -f .env.test mocha test/ --timeout 30000000 --recursive --exit",
-        "prepare": "husky install",
-        "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test"
-    },
-    "keywords": [],
-    "author": "Shanmukha sai KV",
-    "license": "ISC",
-    "dependencies": {
-        "@elastic/elasticsearch": "^8.13.1",
-        "@hapi/boom": "9.1.2",
-        "@hapi/joi-date": "2.0.1",
-        "axios": "0.21.0",
-        "bluebird": "^3.5.1",
-        "body-parser": "1.19.0",
-        "config": "3.3.6",
-        "cors": "2.8.5",
-        "elastic-apm-node": "^4.5.3",
-        "env-cmd": "10.1.0",
-        "express": "4.17.1",
-        "helmet": "4.6.0",
-        "http-status-codes": "2.1.4",
-        "joi": "17.4.0",
-        "joi-objectid": "3.0.1",
-        "kafkajs": "^2.2.4",
-        "lodash": "4.17.20",
-        "mongoose": "^6.8.3",
-        "morgan": "1.10.0",
-        "mysql2": "2.3.3",
-        "node-cache": "^5.1.2",
-        "redis": "^3.1.2",
-        "redis-mock": "^0.56.3",
-        "request-context": "^2.0.0",
-        "sequelize": "^6.12.0-beta.3",
-        "short-uuid": "4.2.2",
-        "uuid": "^8.3.2",
-        "winston": "3.3.3",
-        "xss-clean": "0.1.1"
-    },
-    "lint-staged": {
-        "*.js": [
-            "npm run lint:fix"
-        ]
-    },
-    "devDependencies": {
-        "chai": "4.2.0",
-        "cheerio": "1.0.0-rc.5",
-        "eslint": "6.8.0",
-        "eslint-config-airbnb": "18.2.1",
-        "eslint-config-airbnb-base": "14.2.1",
-        "eslint-config-prettier": "7.1.0",
-        "eslint-plugin-import": "2.22.1",
-        "eslint-plugin-node": "11.1.0",
-        "eslint-plugin-prettier": "3.3.0",
-        "husky": "7.0.0",
-        "lint-staged": "10.4.0",
-        "mocha": "7.0.1",
-        "mocha-junit-reporter": "2.0.0",
-        "nock": "13.0.6",
-        "nodemon": "2.0.2",
-        "nyc": "15.0.0",
-        "prettier": "2.2.1",
-        "supertest": "4.0.2"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+  "name": "Shop Sphere",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=8.3.2"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "lint:fix": "eslint . --fix",
+    "start": "node --inspect src/index.js",
+    "start:uat": "node --inspect src/index.js",
+    "start:dev": "env-cmd -f .env.dev node --inspect src/index.js",
+    "start:local": "env-cmd -f .env nodemon --inspect src/index.js",
+    "test": "env-cmd -f .env.test mocha test/index.js --timeout 30000000 --recursive --exit",
+    "prepare": "husky install",
+    "test:coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=html npm run test",
+    "generate-docs": "env-cmd -f .env node ./src/modules/docs.js"
+  },
+  "keywords": [],
+  "author": "Shanmukha sai KV",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/service-bus": "^7.9.5",
+    "@elastic/elasticsearch": "^8.13.1",
+    "@hapi/boom": "9.1.2",
+    "@hapi/joi-date": "2.0.1",
+    "axios": "0.21.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "1.19.0",
+    "config": "3.3.6",
+    "cors": "2.8.5",
+    "elastic-apm-node": "^4.5.3",
+    "env-cmd": "10.1.0",
+    "express": "4.17.1",
+    "helmet": "4.6.0",
+    "http-status-codes": "2.1.4",
+    "joi": "17.4.0",
+    "joi-objectid": "3.0.1",
+    "joi-to-swagger": "^6.2.0",
+    "js-yaml": "^4.1.0",
+    "kafkajs": "^2.2.4",
+    "lodash": "4.17.20",
+    "mongodb-memory-server": "9.4.0",
+    "mongoose": "^6.8.3",
+    "morgan": "1.10.0",
+    "mysql2": "2.3.3",
+    "node-cache": "^5.1.2",
+    "redis": "^3.1.2",
+    "redis-mock": "^0.56.3",
+    "request-context": "^2.0.0",
+    "sequelize": "^6.12.0-beta.3",
+    "short-uuid": "4.2.2",
+    "uuid": "^8.3.2",
+    "winston": "3.3.3",
+    "xss-clean": "0.1.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix"
+    ]
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "cheerio": "1.0.0-rc.5",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.3.0",
+    "husky": "7.0.0",
+    "lint-staged": "10.4.0",
+    "mocha": "7.0.1",
+    "mocha-junit-reporter": "2.0.0",
+    "nock": "13.0.6",
+    "nodemon": "2.0.2",
+    "nyc": "15.0.0",
+    "prettier": "2.2.1",
+    "supertest": "4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  }
 }
