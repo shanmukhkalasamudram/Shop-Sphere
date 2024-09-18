@@ -6,11 +6,11 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const httpStatusCodes = require('http-status-codes');
 const contextService = require('request-context');
-const { setupKafka } = require('./util/kafka/admin');
-const { connectBus } = require('./util/service-bus');
+// const { setupKafka } = require('./util/kafka/admin');
+// const { connectBus } = require('./util/service-bus');
 const sqlSanitizer = require('./middlewares/sql_sanitizer.middleware');
 
-setupKafka();
+// setupKafka();
 // connectBus();
 
 const app = express();

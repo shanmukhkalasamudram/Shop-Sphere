@@ -1,20 +1,20 @@
 const config = {
   APP: {
-    MORGAN_LOG_LEVEL: process.env.MORGAN_LOG_LEVEL || 'combined',
+    MORGAN_LOG_LEVEL: 'combined',
     NODE_ENV: process.env.NODE_ENV || 'test',
-    PORT: process.env.PORT || 5000,
+    PORT: 3000,
   },
   LOGGER: {
-    LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
-    MORGAN_LOG_LEVEL: process.env.MORGAN_LOG_LEVEL || 'combined',
-    SILENT_LOGGER: process.env.SILENT_LOGGER || false,
+    LOG_LEVEL: 'debug',
+    MORGAN_LOG_LEVEL: 'combined',
+    SILENT_LOGGER: false,
   },
   MONGO: {
     url: process.env.MONGO_URL,
     MONGO_CONNECT_TIMEOUT: 10000,
   },
   ELASTIC_SEARCH: {
-    node: process.env.ELASTIC_SEARCH_URL,
+    node: 'process.env.ELASTIC_SEARCH_URL',
   },
   DB: {
     SQL: {
@@ -27,7 +27,7 @@ const config = {
   },
   KAFKA: {
     CLIENT_ID: process.env.KAFKA_CLIENT_ID,
-    BROKERS: process.env.KAFKA_BROKERS.split(','),
+    BROKERS: 'process.env.KAFKA_BROKERS.split',
     SASL: {
       MECHANISM: process.env.KAFKA_SASL_MECHANISM,
       USERNAME: process.env.KAFKA_USERNAME,
