@@ -77,9 +77,13 @@ Namespace
 A namespace serves as a comprehensive container for all messaging elements. Within a single namespace, it's possible to house multiple queues and topics, effectively functioning as application containers. In scenarios where an application comprises various components, these components can be linked to the topics and queues housed within the namespace.
 
 
+
+
 Queues
 Queues act as repositories for messages, serving as the point where messages are dispatched and received. Messages sent to a queue remain stored until they are fetched and processed by the receiving application. The mechanism operates on a First-In, First-Out (FIFO) basis.
 
 Upon receiving a new message in the queue, Service Bus assigns a timestamp to it. Once processed, the message is securely stored in redundant storage.
 
 Messages within the queue are delivered in a pull mode, implying that they are only delivered when specifically requested by an application
+
+Project PRD and Tech documentation  - https://www.notion.so/Product-Requirements-Document-PRD-and-Technical-Documentation-for-Shop-Sphere-Backend-2172459543f980abb522f82e6598adcb?source=copy_link
